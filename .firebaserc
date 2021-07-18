@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "skoufoswinestore": {
+      "hosting": {
+        "WineStore": [
+          "skoufoswinestore"
+        ]
+      }
+    }
+  }
+}
