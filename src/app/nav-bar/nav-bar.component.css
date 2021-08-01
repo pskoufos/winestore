@@ -1,0 +1,45 @@
+/*:host ::ng-deep .p-menubar .text*/
+/*{*/
+/*  color : coral ;*/
+/*}*/
+
+/*:host ::ng-deep .p-menubar .p-menu-list*/
+/*{*/
+/*  color : coral ;*/
+/*}*/
+
+/*:host ::ng-deep .p-menubar .p-menuitem .p-menuitem-icon*/
+/*{*/
+/*  color : coral ;*/
+/*}*/
+
+
+/*:host ::ng-deep .p-menubar .p-menuitem .p-submenu-icon*/
+/*{*/
+/*  color : coral ;*/
+/*}*/
+
+
+/*:host ::ng-deep .p-menubar .p-menuitem .p-menuitem-text*/
+/*{*/
+/*  color : coral ;*/
+/*}*/
+
+
+/*:host ::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text*/
+/*{*/
+/*  color : coral ;*/
+/*}*/
+
+/*:host ::ng-deep  .p-menubar .p-submenu-list .p-menuitem {*/
+/*  color : coral ;*/
+/*}*/
+
+
+/*:host ::ng-deep  .p-menubar .p-menubar-root-list .p-menuitem.p-menuitem-active .p-menuitem-link .p-menuitem-text {*/
+/*  color : coral ;*/
+/*}*/
+
+/*:host ::ng-deep  .p-menuitem-text {*/
+/*  color : coral ;*/
+/*}*/
