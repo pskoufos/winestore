@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   padding: 2em;
-  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+  font-family: -apple-system, BlinkMacSystemFont,
+  “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+  background:var(--surface-a);
 }
 
 html {
@@ -19,4 +21,16 @@ h1, .h1 {
   font-size: 40px;
   font-weight: 700;
   line-height: 1
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+h6 {
+  color:  rgb(210,173,59) ;
+  margin-bottom: 25px;
+  font-size: 25px;
+  font-weight: 700px;
 }

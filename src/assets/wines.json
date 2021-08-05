@@ -1,0 +1,40 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"code": "f230fh0g3",
+			"name": "Παπαίωάνου Αγιωργήτικο",
+			"description": "Βαθυκόκκινο με Τανίνες",
+			"image": "PapaioanouNemea.jpg",
+			"price": 65,
+			"category": "Red",
+			"quantity": 24,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "1001",
+			"code": "nvklal433",
+			"name": "Αποκάλυψης Αγιωργήτικο",
+			"description": "μπλα μπλα μπλα",
+			"image": "Apocalipsis.jpg",
+			"price": 72,
+			"category": "Red",
+			"quantity": 61,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4
+		},
+		{
+			"id": "1002",
+			"code": "zz21cz3c1",
+			"name": "Παυλίδης Θέμα Ερυθρό",
+			"description": "Βαθυκόκκινο από την Βόρεια Ελλάδα",
+			"image": "ThemaRed.jpg",
+			"price": 79,
+			"category": "Red",
+			"quantity": 2,
+			"inventoryStatus": "LOWSTOCK",
+			"rating": 5
+    }
+			]
+}

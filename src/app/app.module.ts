@@ -15,6 +15,19 @@ import {ButtonModule} from "primeng/button";
 import { SharedModule } from 'primeng/api';
 import {TabViewModule} from "primeng/tabview";
 import { FooterComponent } from './footer/footer.component';
+import { LayoutComponent } from './layout/layout.component';
+import { CarouselComponent } from './layout/carousel/carousel.component';
+import { OffersComponent } from './layout/offers/offers.component';
+import { GiftsComponent } from './layout/gifts/gifts.component';
+import {CarouselModule} from "primeng/carousel" ;
+import { ProductService } from './model/product-service';
+import {  HttpClientModule } from '@angular/common/http';
+import { NewArrivalsComponent } from './layout/new-arrivals/new-arrivals.component';
+import { SelectionWinesComponent } from './layout/selection-wines/selection-wines.component';
+import { SelectionWhiskeyComponent } from './layout/selection-whiskey/selection-whiskey.component';
+import { SelectionFoodComponent } from './layout/selection-food/selection-food.component';
+import { SelectionGrDistilationsComponent } from './layout/selection-gr-distilations/selection-gr-distilations.component';
+import { SelectionOtherComponent } from './layout/selection-other/selection-other.component';
 
 
 
@@ -22,7 +35,17 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    LayoutComponent,
+    CarouselComponent,
+    OffersComponent,
+    GiftsComponent,
+    NewArrivalsComponent,
+    SelectionWinesComponent,
+    SelectionWhiskeyComponent,
+    SelectionFoodComponent,
+    SelectionGrDistilationsComponent,
+    SelectionOtherComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +56,11 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     InputTextModule,
     ButtonModule,
-    TabViewModule
+    TabViewModule,
+    CarouselModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

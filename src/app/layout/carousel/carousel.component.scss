@@ -1,0 +1,49 @@
+.carousel-h4{
+  color: black;
+}
+
+.product-item {
+
+  .product-item-content {
+      border: 1px solid var(--surface-d);
+      border-radius: 3px;
+      margin: .3rem;
+      text-align: center;
+      padding: 2rem 0;
+      background-color: beige ;  // var(--surface-a) ;
+      color: black;
+
+
+
+  }
+
+
+
+  .product-badge.status-lowstock {
+    background: #feedaf;
+    color: #8a5340;
+}
+  .product-badge.status-instock {
+    background: #c8e6c9;
+    color: #256029;
+}
+
+.product-badge {
+  border-radius: 2px;
+  padding: .25em .5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+  .product-image {
+      //width: 25%;
+      float:none ;
+      width:  200px;
+      height: 200px;
+      object-fit:cover ;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      color: var(--surface-a) ;
+  }
+}
