@@ -39,21 +39,21 @@ export class ProductService {
         .then(data => { return data; });
     }
 
-    generateProduct(): Product {
-        const product: Product =  {
-            id: this.generateId(),
-            name: this.generateName(),
-            description: "Product Description",
-            price: this.generatePrice(),
-            quantity: this.generateQuantity(),
-            category: "Product Category",
-            inventoryStatus: this.generateStatus(),
-            rating: this.generateRating()
-        };
+    // generateProduct(): Product {
+    //     const product: Product =  {
+    //         //id: this.generateId(),
+    //         name: this.generateName(),
+    //         description: "Product Description",
+    //         price: this.generatePrice(),
+    //         quantity: this.generateQuantity(),
+    //         category: "Product Category",
+    //         inventoryStatus: this.generateStatus(),
+    //         rating: this.generateRating()
+    //     };
 
-        product.image = product.name?.toLocaleLowerCase().split(/[ ,]+/).join('-')+".jpg";
-        return product;
-    }
+    //     product.image = product.name?.toLocaleLowerCase().split(/[ ,]+/).join('-')+".jpg";
+    //     return product;
+    // }
 
     generateId() {
         let text = "";

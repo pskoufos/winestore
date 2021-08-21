@@ -8,12 +8,12 @@
       <div class="product-item">
           <div class="product-item-content">
               <div class="p-mb-3">
-                  <img src="assets/images/wines/{{product.image}}" [alt]="product.name" class="product-image" />
+                  <img src="{{product.Photos}}" [alt]="product.ProdID" class="product-image" />
               </div>
               <div>
-                  <h4 class="p-mb-1 carousel-h4">{{product.name}}</h4>
-                  <h6 class="p-mt-0 p-mb-3">${{product.price}}</h6>
-                  <span [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+                  <h4 class="p-mb-1 carousel-h4">{{product.ProdDescr}}</h4>
+                  <h6 class="p-mt-0 p-mb-3">{{product.Price + ' ' +product.Currency}}</h6>
+                  <span [class]="'product-badge status-'+inventoryStatus(product).toLowerCase()">{{inventoryStatus(product)}}</span>
                   <div class="car-buttons p-mt-5">
                       <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
                       <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star"></p-button>

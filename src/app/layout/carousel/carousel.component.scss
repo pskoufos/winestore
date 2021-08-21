@@ -10,7 +10,7 @@
       margin: .3rem;
       text-align: center;
       padding: 2rem 0;
-      background-color: beige ;  // var(--surface-a) ;
+      background-color: white ;  // var(--surface-a) ;
       color: black;
 
 
@@ -39,10 +39,12 @@
 
   .product-image {
       //width: 25%;
+      background-color: transparent;
       float:none ;
       width:  200px;
       height: 200px;
-      object-fit:cover ;
+      padding: .5rem;
+      object-fit:contain ;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       color: var(--surface-a) ;
   }

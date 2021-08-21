@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import {environment} from "../environments/environment";
 import { AngularFireModule} from "@angular/fire";
 import { AngularFirestoreModule} from "@angular/fire/firestore";
+import {AngularFireStorageModule} from "@angular/fire/storage" ;
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MenubarModule} from "primeng/menubar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
-import { SharedModule } from 'primeng/api';
 import {TabViewModule} from "primeng/tabview";
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -28,7 +28,7 @@ import { SelectionWhiskeyComponent } from './layout/selection-whiskey/selection-
 import { SelectionFoodComponent } from './layout/selection-food/selection-food.component';
 import { SelectionGrDistilationsComponent } from './layout/selection-gr-distilations/selection-gr-distilations.component';
 import { SelectionOtherComponent } from './layout/selection-other/selection-other.component';
-
+import { ProductFirestoreService } from './model/product-firestore-service';
 
 
 @NgModule({
@@ -52,6 +52,7 @@ import { SelectionOtherComponent } from './layout/selection-other/selection-othe
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     MenubarModule,
     BrowserAnimationsModule,
     InputTextModule,
@@ -60,7 +61,7 @@ import { SelectionOtherComponent } from './layout/selection-other/selection-othe
     CarouselModule,
     HttpClientModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, ProductFirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
