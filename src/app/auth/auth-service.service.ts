@@ -1,5 +1,5 @@
 import { Injectable} from '@angular/core';
-import {AngularFireAuth } from 'angularfire2/auth';
+import {AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app' ;
 
 
@@ -9,10 +9,10 @@ import * as firebase from 'firebase/app' ;
 })
 export class AuthServiceService{
 
-  private user : firebase.User ;
+  private user : firebase.default.User|null = null ;
 
   constructor(private fireAuth : AngularFireAuth ) {
-       this.fireAuth. authState.subscribe(authuser => {this.user = authuser; }) ;
+       this.fireAuth.authState.subscribe(authuser => {this.user = authuser; }) ;
    }
 
    private loginEmailPass () {
@@ -20,6 +20,6 @@ export class AuthServiceService{
    }
 
    private logout () {
-     this.fireAuth.
+     this.fireAuth.signOut() ;
   }
 }
