@@ -1,8 +1,21 @@
 <p-menubar [model]="items">
   <ng-template pTemplate="start">
-    <img src="favicon.ico" height="40" class="p-mr-2">
+    <img src="favicon.ico" height="40" class="p-mr-2" />
   </ng-template>
+
   <ng-template pTemplate="end">
-    <input type="text" pInputText placeholder="Search">
+    <div class="flex flex-row flex-wrap" style=" margin-right: 1.5rem; ">
+        <input type="text" pInputText placeholder="Search"  class="hidden md:inline-block"/>
+        <div *ngIf="auth.user$ | async as user" class="block md:inline-flex ml-4 align-items-center " >
+          <h3 class="inline-block  ml-4 justify-content-center" >{{ user.displayName }}</h3>
+          <p-speedDial  showIcon="fa fa-user-circle" style="position:relative;"
+          [model]="userMenu" className="speeddial-left" direction="down" class="inline-flex  ml-2 justify-content-center" ></p-speedDial>
+          <!-- <p-button  class="inline-block  ml-4 justify-content-center" type="button"  icon="fa fa-sign-out" label="Logout" (click)="auth.logout()" ></p-button> -->
+        </div>
+        <div *ngIf="!(auth.user$ | async)  as user" class="block  md:inline-flex  ml-4 align-items-left ">
+          <p-speedDial  showIcon="fa fa-user-circle" style="position:relative;"
+          [model]="guestMenu" className="speeddial-left" direction="down" class="inline-flex  ml-2 justify-content-center" ></p-speedDial>
+        </div>
+      </div>
   </ng-template>
 </p-menubar>

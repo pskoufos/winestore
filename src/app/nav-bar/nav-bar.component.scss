@@ -13,18 +13,15 @@
 /*  color : coral ;*/
 /*}*/
 
-
 /*:host ::ng-deep .p-menubar .p-menuitem .p-submenu-icon*/
 /*{*/
 /*  color : coral ;*/
 /*}*/
 
-
 /*:host ::ng-deep .p-menubar .p-menuitem .p-menuitem-text*/
 /*{*/
 /*  color : coral ;*/
 /*}*/
-
 
 /*:host ::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text*/
 /*{*/
@@ -35,7 +32,6 @@
 /*  color : coral ;*/
 /*}*/
 
-
 /*:host ::ng-deep  .p-menubar .p-menubar-root-list .p-menuitem.p-menuitem-active .p-menuitem-link .p-menuitem-text {*/
 /*  color : coral ;*/
 /*}*/
@@ -43,3 +39,38 @@
 /*:host ::ng-deep  .p-menuitem-text {*/
 /*  color : coral ;*/
 /*}*/
+:host ::ng-deep {
+  .speeddial-tooltip-demo {
+    .p-speeddial-direction-up {
+      &.speeddial-left {
+        left: 0;
+        bottom: 0;
+      }
+
+      &.speeddial-right {
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  .p-speeddial-button.p-button.p-button-icon-only {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .p-speeddial-button {
+    top: -0.5rem;
+  }
+
+  .p-menubar {
+      background-color:var(--menuBackground);
+  }
+  .p-menu-list {
+    background-color:var(--menuBackground);
+  }
+
+  .p-menuitem {
+    background-color:var(--menuBackground);
+  }
+}

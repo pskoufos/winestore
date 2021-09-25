@@ -1,5 +1,13 @@
 .carousel-h4{
   color: black;
+  text-align: center;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.card-buttons {
+  padding: .5rem, .5rem;
+  margin: .5rem;
 }
 
 .product-item {
@@ -8,13 +16,13 @@
       border: 1px solid var(--surface-d);
       border-radius: 3px;
       margin: .3rem;
-      text-align: center;
+      text-align:center;
+      vertical-align: auto;
       padding: 2rem 0;
       background-color: white ;  // var(--surface-a) ;
       color: black;
-
-
-
+      max-height: 40rem;
+      height: 40rem;
   }
 
 
@@ -42,7 +50,7 @@
       background-color: transparent;
       float:none ;
       width:  200px;
-      height: 200px;
+      height: 250px;
       padding: .5rem;
       object-fit:contain ;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
