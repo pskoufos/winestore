@@ -1,8 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+
 
 import {MenuItem, MessageService} from "primeng/api";
 import { AuthServiceService } from '../auth/auth-service.service';
+
 
 
 @Component({
@@ -13,7 +17,7 @@ import { AuthServiceService } from '../auth/auth-service.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public auth : AuthServiceService , private messageService: MessageService)  {
+  constructor(private auth : AuthServiceService, public afAuth : AngularFireAuth ,private  router : Router, private messageService: MessageService)  {
    }
 
    private logout() {
@@ -32,13 +36,14 @@ export class NavBarComponent implements OnInit {
     this.items = this.getMenuItems(false) ;
     this.guestMenu = [
       {
-        tooltipOptions: {tooltipLabel: "Νέος Λογαριασμός",tooltipPosition: "left" },
           icon: 'fa fa-user-plus fa-lg',
+          label: 'Νέος Λογαρ.',
           command: () => {  }
       },
+      {separator:true},
       {
-        tooltipOptions: {tooltipLabel: "Σύνδεση",tooltipPosition: "left"},
-                  icon: 'fa fa-sign-in fa-lg',
+          icon: 'fa fa-sign-in fa-lg',
+          label: 'Σύνδεση',
           command: () => {this.auth.loginEmailPass() ; }
       }]
 
@@ -46,17 +51,20 @@ export class NavBarComponent implements OnInit {
 
       this.userMenu = [
         {
-          tooltipOptions: {tooltipLabel: "Προφίλ",tooltipPosition: "left"},
-            icon: 'fa fa-id-card-o fa-lg',
-            command: () => {  }
+          // tooltipOptions: {tooltipLabel: "Προφίλ",tooltipPosition: "left"},
+          label: 'Προφίλ',
+          icon: 'fa fa-id-card-o fa-lg',
+          command: () => { this.router.navigate(['/custInfo']); }
         },
         {
-          tooltipOptions: {tooltipLabel: "Ιστορικό Παραγγελιών",tooltipPosition: "left" },
-            icon: 'fa fa-folder-open fa-lg',
-            command: () => { }
+          // tooltipOptions: {tooltipLabel: "Ιστορικό Παραγγελιών",tooltipPosition: "left" },
+          label:'Ιστορικό Παραγγελιών',
+          icon: 'fa fa-folder-open fa-lg',
+          command: () => { }
         },
+        {separator:true},
         {
-          tooltipOptions: {tooltipLabel: "Αποσύνδεση",tooltipPosition: "left" },
+          label: 'Αποσύνδεση' ,
           icon: 'fa fa-sign-out fa-lg',
           command: () => {this.auth.logout();}
       },

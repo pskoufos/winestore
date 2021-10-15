@@ -1,45 +1,21 @@
 import { ApplicationRef, Injectable} from '@angular/core';
 import {AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app' ;
-import {  Observable, Subject} from 'rxjs';
 import {AngularFirestore} from '@angular/fire/firestore' ;
+import {first} from 'rxjs/operators' ;
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
 
- user$  = new Observable <any>() ;
- isLoggedIn$  = new Subject<boolean> ();
 
-
-  constructor(public fireAuth : AngularFireAuth, public app : ApplicationRef , public afs : AngularFirestore ) {
-    // this.user$ = new Observable ( (subscriber) => {
-    //     this.fireAuth.onAuthStateChanged(subscriber) ;
-    // })
-    this.fireAuth.onAuthStateChanged((user) => {
-      if (user) {
-        console.log('!! uname='+ user.displayName) ;
-        this.isLoggedIn$.next(true) ;
-        this.user$= new Observable( subscriber => {subscriber.next(user) ; });
-        app.tick();
-      }// if
-      else {
-        console.log(user) ;
-        this.isLoggedIn$.next(false) ;
-        this.user$= new Observable( subscriber => {subscriber.next(null) ; });
-        app.tick() ;
-      }
-    }//stateChanged
-
-    ).catch (error => console.log (error))
+  constructor(public afAuth : AngularFireAuth, public app : ApplicationRef , public afs : AngularFirestore ) {
 
    }//ctor
 
-
-
    public loginEmailPass () {
-        this.fireAuth.signInWithEmailAndPassword('pskoufos@gmail.com', 'psk2716')
+        this.afAuth.signInWithEmailAndPassword('pskoufos@gmail.com', 'psk2716')
         .then (fuser=> {
 
           fuser.user?.updateProfile({displayName:'Panos Skoufos', photoURL: undefined}) ;
@@ -48,12 +24,19 @@ export class AuthServiceService {
          .catch(error => {console.log(error) ; }) ;
    }// loginpass
 
+
    public logout () {
-     this.fireAuth.signOut()
+     this.afAuth.signOut()
      .then( () => {
       console.log('log out...') ;  } )
      .catch(error => {console.log(error) ; }) ;
   }//logout
+
+
+
+  public isLoggedIn() {
+    return this.afAuth.authState.pipe(first()).toPromise();
+ }
 
 
 }// class

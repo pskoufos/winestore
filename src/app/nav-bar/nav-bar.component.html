@@ -6,15 +6,15 @@
   <ng-template pTemplate="end">
     <div class="flex flex-row flex-wrap" style=" margin-right: 1.5rem; ">
         <input type="text" pInputText placeholder="Search"  class="hidden md:inline-block"/>
-        <div *ngIf="auth.user$ | async as user" class="block md:inline-flex ml-4 align-items-center " >
-          <h3 class="inline-block  ml-4 justify-content-center" >{{ user.displayName }}</h3>
-          <p-speedDial  showIcon="fa fa-user-circle" style="position:relative;"
-          [model]="userMenu" className="speeddial-left" direction="down" class="inline-flex  ml-2 justify-content-center" ></p-speedDial>
-          <!-- <p-button  class="inline-block  ml-4 justify-content-center" type="button"  icon="fa fa-sign-out" label="Logout" (click)="auth.logout()" ></p-button> -->
+        <div *ngIf="afAuth.user| async as user " class="block md:inline-flex ml-4 align-items-center " >
+          <p-slideMenu #auth_umenu [model]="userMenu" [popup]="true"   effectDuration="1000" easing="ease-in"></p-slideMenu>
+          <button #btn type="button" pButton pRipple icon="fa fa-list fa-lg" [label]="user.displayName | firstLetterPipe"
+          class="p-button-rounded" (click)="auth_umenu.toggle($event)"></button>
         </div>
-        <div *ngIf="!(auth.user$ | async)  as user" class="block  md:inline-flex  ml-4 align-items-left ">
-          <p-speedDial  showIcon="fa fa-user-circle" style="position:relative;"
-          [model]="guestMenu" className="speeddial-left" direction="down" class="inline-flex  ml-2 justify-content-center" ></p-speedDial>
+
+        <div *ngIf="!(afAuth.user |async )  as user" class="block  md:inline-flex  ml-4 align-items-left ">
+          <p-slideMenu #unauth_umenu [model]="guestMenu" [popup]=true ></p-slideMenu>
+          <button #btn type="button" pButton pRipple icon="fa fa-user-circle fa-lg"  class="p-button-rounded" label=" ?" (click)="unauth_umenu.toggle($event)"></button>
         </div>
       </div>
   </ng-template>

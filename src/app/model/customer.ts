@@ -8,4 +8,6 @@ export interface Customer {
   status?:  number ;
   phone?: string ;
   addresses?: Address[]  ;
+  locked : boolean ;
+  discount: number;
 }

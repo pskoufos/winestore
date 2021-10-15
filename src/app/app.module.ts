@@ -35,7 +35,9 @@ import { SelectionFoodComponent } from './layout/selection-food/selection-food.c
 import { SelectionGrDistilationsComponent } from './layout/selection-gr-distilations/selection-gr-distilations.component';
 import { SelectionOtherComponent } from './layout/selection-other/selection-other.component';
 import { ProductFirestoreService } from './model/product-firestore-service';
-
+import {SlideMenuModule} from 'primeng/slidemenu';
+import {firstLetterPipe} from './tools/firstLetter.pipe';
+import { CustInfoComponent } from './user/cust-info/cust-info.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ProductFirestoreService } from './model/product-firestore-service';
     SelectionWhiskeyComponent,
     SelectionFoodComponent,
     SelectionGrDistilationsComponent,
-    SelectionOtherComponent
+    SelectionOtherComponent,
+    firstLetterPipe,
+    CustInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,8 @@ import { ProductFirestoreService } from './model/product-firestore-service';
     TabViewModule,
     CarouselModule,
     HttpClientModule,
-    SpeedDialModule
+    SpeedDialModule,
+    SlideMenuModule
   ],
   providers: [ProductService, ProductFirestoreService],
   bootstrap: [AppComponent]
