@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Changes 
 Customer UI  start 07.11.21 
+rev 1   --> 27.11.21
