@@ -63,6 +63,14 @@
     height : 1rem ;
    }
 
+   .p-menubar {
+    .p-menuitem-link:not(.p-disabled) {
+      .p-menuitem-text{
+     color: var(--primary-color);
+      }
+    }
+   }
+
   // .p-slide-button.p-button.p-button-icon-only {
   //   width: 3rem;
   //   height: 3rem;
@@ -72,9 +80,10 @@
   //   top: -0.5rem;
   // }
 
-  // .p-menubar {
-  //     background-color:var(--menuBackground);
-  // }
+  .p-menubar {
+      background-color: var(--menuBackground2) ;
+  }
+
   // .p-menu-list {
   //   background-color:var(--menuBackground);
   // }
